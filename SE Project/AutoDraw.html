@@ -1,0 +1,277 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>AutoDraw</title>
+
+        <!-- Bootstrap CSS CDN -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <!-- Our Custom CSS -->
+        <link rel="stylesheet" href="style3.css">
+        <!-- Scrollbar Custom CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+
+        <div class="wrapper">
+            <!-- Sidebar Holder -->
+            <nav id="sidebar">
+                <div id="dismiss">
+                    <i class="glyphicon glyphicon-arrow-left"></i>
+                </div>
+
+                <div class="sidebar-header">
+                    <h2>AutoDraw</h2>
+                    <h4>An A.I. Experiment</h4>
+                </div>
+
+                <ul class="list-unstyled components">
+                    <p>Home</p>
+                    <li>
+                        <a href="#NewSubmenu" data-toggle="collapse" aria-expanded="false">Start Over</a>
+                        <ul class="collapse list-unstyled" id="NewSubmenu">
+                            <li><a href="#" class="new_canvas">Horizontal</a></li>
+                            <li><a href="#" class="new_canvas">Vetical</a></li>
+                            <li><a href="#" class="new_canvas">Normal</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Download</a>
+                    </li>
+                    <li>
+                        <a href="#">Share</a>
+                    </li>
+                    <li>
+                        <a href="#">How-To</a>
+                    </li>
+                    <li>
+                        <a href="#">ShortCuts</a>
+                    </li>
+                    <li>
+                        <a href="#">Artists</a>
+                    </li>
+                    <li>
+                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">Developers</a>
+                        <ul class="collapse list-unstyled" id="pageSubmenu">
+                            <li><a href="#">Ojas Naik</a></li>
+                            <li><a href="#">Rushikesh Patangrao</a></li>
+                            <li><a href="#">Shubham Rane</a></li>
+                            <li><a href="#">Prathmesh Mungarwadi</a></li>
+                        </ul>
+                    </li>   
+                </ul>
+            </nav>
+
+            <!-- Page Content Holder -->
+            <div id="content">
+
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        
+                         <div class="navbar-header">
+                            <button type="button" id="sidebarCollapse" class="btn btn-default navbar-btn">
+                                <i class="glyphicon glyphicon-align-left"></i>
+                            </button>
+                        </div>
+
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav">
+                                <li><a href="#"><i class="fa fa-paint-brush"></i> AutoDraw</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+
+<!-- Actual Contents -->
+
+                <div class="container">
+                    <div class="row">
+
+                        <!-- toolbox -->
+                        <div class="col-sm-2">
+                            <div class="row toolbar">
+                                <input type="file" id="selectedFile" style="display: none;" />
+                                <button onclick="document.getElementById('selectedFile').click();" class="button" id="SelectButton">
+                                <img src="image/select.png"></button>
+                                <div class="button_span invisible" id="Select">Select</div>
+                            </div>
+                            <div class="row toolbar">
+                                <button class="button" id="DrawButton"><img src="image/draw.png"></button>
+                                <div class="button_span invisible" id="Draw" style="position:absolute;margin-top:25px;">Draw</div>
+                                <form class="invisible" id="width">
+                                    <input type="range" min="1" max="10" step="1" id="input_width"></input>
+                                </form>
+                            </div>
+                            <div class="row toolbar">
+                                <button class="button" id="EraserButton"><img src="image/eraser.png"></button>
+                                <div class="button_span invisible" id="Eraser" style="position:absolute;margin-top:25px;">Eraser</div>
+                                <form class="invisible" id="eraser" >
+                                    <input type="range" min="2" max="40" step="2" id="eraser_size"></input>
+                                </form>
+                            </div>
+                            <div class="row toolbar">
+                                <button class="button" id="FillButton"><img src="image/fill.png"></button>
+                                <div class="button_span invisible" id="Fill" style="position:absolute;margin-top:25px;">Fill</div>
+                                <div class="invisible" id="FillColor">
+                                        <button id="blue1"></button>
+                                        <button id="red1"></button>
+                                        <button id="green1"></button>
+                                        <button id="yellow1"></button>
+                                        <button id="black1"></button>
+                                        <button id="purple1"></button>
+                                </div>
+                            </div>
+                            <div class="row toolbar">
+                                <button class="button" id="ShapeButton"><img src="image/shape.png"></button>
+                                <div class="button_span invisible" id="Shape" style="position:absolute;margin-top:25px">Shape</div>
+                                <div  class="invisible" id="ShapeSelect">
+                                        <button class="shapes" id="rectangle"><img src="image/rectangle.png"></button>
+                                        <button class="shapes" id="circle"><img src="image/circle.png"></button>
+                                        <button class="shapes" id="vertical_triangle"><img src="image/vertical_triangle.png">        </button>
+                                        <button class="shapes" id="horizontal_triangle"><img src="image/horizontal_triangle.png">      </button>
+                                        
+                                </div>
+                            </div>
+                            <div class="row toolbar">
+                                <button class="button" id="ColorButton">
+                                    <div id="color">
+                                    </div></button>
+                                <div class="button_span invisible" id="color_name" style="position:absolute;margin-top:25px">Color</div>
+                                <div class="invisible" id="Color">
+                                        <button id="blue"></button>
+                                        <button id="red"></button>
+                                        <button id="green"></button>
+                                        <button id="yellow"></button>
+                                        <button id="black"></button>
+                                        <button id="purple"></button>
+                                </div>
+                            </div>
+                            <div class="row toolbar">
+                                <button class="button" id="UndoButton"><img src="image/undo.png"></button>
+                                <div class="button_span invisible" id="Undo">Undo</div>
+                            </div>
+                            <div class="row toolbar">
+                                <a id="downloader" download="image.png"><button class="button" type="button" onClick="download()" id="DownloadButton"><img src="image/download.png"></button></a>
+                                <div class="button_span invisible" id="Download">Download</div>
+                            </div>
+
+
+                        </div>
+
+                        <!-- drawing pane -->
+                        <div class="col-sm-10">
+                            <!-- <div class="row" id="recommendation" style="display:table">
+                                <div class="recommendations" style="display:table-cell"><img src="image/circle.png" class="recommend_image"></div>
+                                <div class="recommendations" style="display:table-cell"><img src="image/circle.png" class="recommend_image"></div>
+                                <div class="recommendations" style="display:table-cell"><img src="image/circle.png" class="recommend_image"></div>
+                                <div class="recommendations" style="display:table-cell"><img src="image/circle.png" class="recommend_image"></div>
+                                <div class="recommendations" style="display:table-cell"><img src="image/circle.png" class="recommend_image"></div>
+                                <div class="recommendations" style="display:table-cell"><img src="image/circle.png" class="recommend_image"></div>
+                                <div class="recommendations" style="display:table-cell"><img src="image/circle.png" class="recommend_image"></div>
+                      
+                            </div> -->
+                            <div class="row"><canvas id="canvas"></canvas></div>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+        <div class="overlay"></div>
+
+        <!-- createJS -->
+        <!-- jQuery CDN -->
+        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+        <!-- Bootstrap Js CDN -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <!-- jQuery Custom Scroller CDN -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+        <script src="canvas.js"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("#sidebar").mCustomScrollbar({
+                    theme: "minimal"
+                });
+
+                $('#dismiss, .overlay').on('click', function () {
+                    $('#sidebar').removeClass('active');
+                    $('.overlay').fadeOut();
+                });
+
+                $('#sidebarCollapse').on('click', function () {
+                    $('#sidebar').addClass('active');
+                    $('.overlay').fadeIn();
+                    $('.collapse.in').toggleClass('in');
+                    $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+                });
+            });
+            document.getElementById('SelectButton').addEventListener("mouseover", function() {
+                document.getElementById('Select').classList.remove('invisible');
+            });
+            document.getElementById('DrawButton').addEventListener("mouseover", function() {
+                document.getElementById('Draw').classList.remove('invisible');
+            });
+            document.getElementById('EraserButton').addEventListener("mouseover", function() {
+                document.getElementById('Eraser').classList.remove('invisible');
+            });
+            document.getElementById('FillButton').addEventListener("mouseover", function() {
+                document.getElementById('Fill').classList.remove('invisible');
+            });
+            document.getElementById('ShapeButton').addEventListener("mouseover", function() {
+                document.getElementById('Shape').classList.remove('invisible');
+            });
+            document.getElementById('UndoButton').addEventListener("mouseover", function() {
+                document.getElementById('Undo').classList.remove('invisible');
+            });
+            document.getElementById('ColorButton').addEventListener("mouseover", function() {
+                document.getElementById('color_name').classList.remove('invisible');
+            });
+
+            document.getElementById('DownloadButton').addEventListener('mouseover', function(e) {
+                document.getElementById('Download').classList.remove('invisible');
+            });
+
+
+            document.getElementById('SelectButton').addEventListener("mouseout", function() {
+                document.getElementById('Select').classList.add('invisible');
+            });
+            document.getElementById('DrawButton').addEventListener("mouseout", function() {
+                document.getElementById('Draw').classList.add('invisible');
+            });
+            document.getElementById('EraserButton').addEventListener("mouseout", function() {
+                document.getElementById('Eraser').classList.add('invisible');
+            });
+            document.getElementById('FillButton').addEventListener("mouseout", function() {
+                document.getElementById('Fill').classList.add('invisible');
+            });
+            document.getElementById('ShapeButton').addEventListener("mouseout", function() {
+                document.getElementById('Shape').classList.add('invisible');
+            });
+            document.getElementById('UndoButton').addEventListener("mouseout", function() {
+                document.getElementById('Undo').classList.add('invisible');
+            });
+            document.getElementById('ColorButton').addEventListener("mouseout", function() {
+                document.getElementById('color_name').classList.add('invisible');
+            });
+            document.getElementById('DownloadButton').addEventListener('mouseout', function(e) {
+                document.getElementById('Download').classList.add('invisible');
+            });
+
+
+
+
+
+        </script>
+    </body>
+</html>

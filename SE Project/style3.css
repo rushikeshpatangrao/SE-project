@@ -1,0 +1,397 @@
+/*
+    DEMO STYLE
+*/
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fafafa;
+}
+
+
+
+a, a:hover, a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.navbar {
+    background: #EBEBEB;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 10px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+    background: #EBEBEB;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px dashed #ddd;
+    margin: 40px 0;
+}
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+#sidebar {
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    height: 100vh;
+    z-index: 999;
+    background: #111;
+    color: #fff;
+    transition: all 0.3s;
+    overflow-y: scroll;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+#sidebar.active {
+    left: 0;
+}
+
+#dismiss {
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    background: #111;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+#dismiss:hover {
+    background: #fff;
+    color: #7386D5;
+}
+
+.overlay {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 998;
+    display: none;
+}
+
+#sidebar .sidebar-header {
+    padding: 20px;
+    background: #333;
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+    border-bottom: 1px solid #47748b;
+}
+
+#sidebar ul p {
+    color: #fff;
+    padding: 10px;
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+}
+#sidebar ul li a:hover {
+    color: #7386D5;
+    background: #fff;
+}
+
+#sidebar ul li.active > a, a[aria-expanded="true"] {
+    color: #fff;
+    background: #333;
+}
+
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+a[aria-expanded="false"]::before, a[aria-expanded="true"]::before {
+    content: '\e259';
+    display: block;
+    position: absolute;
+    right: 20px;
+    font-family: 'Glyphicons Halflings';
+    font-size: 0.6em;
+}
+a[aria-expanded="true"]::before {
+    content: '\e260';
+}
+
+
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: #333;
+}
+
+ul.CTAs {
+    padding: 20px;
+}
+
+ul.CTAs a {
+    text-align: center;
+    font-size: 0.9em !important;
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+a.download {
+    background: #fff;
+    color: #7386D5;
+}
+a.article, a.article:hover {
+    background: #6d7fcc !important;
+    color: #fff !important;
+}
+
+/* ---------------------------------------------------
+    TOOLS STYLE
+----------------------------------------------------- */
+.button img{
+    width: 90%;
+    height: 90%;   
+    border-radius: 50%;
+}
+#color {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: black;
+    margin-left: 5px;
+    z-index: 99;
+}
+
+#Color,#FillColor{
+    height: 140px;
+    width: 120px;
+    background: #fff;
+    position: absolute;
+    display: inline;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+    margin: 20px;
+    padding: 5px 15px;
+}
+
+#red, #red1 {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: red;
+    border: 2px solid white;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
+}
+#black, #black1 {
+
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: black;
+    border: 2px solid white;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
+
+} 
+#green, #green1 {
+
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: green;
+    border: 2px solid white;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
+} 
+#blue, #blue1 {
+
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: blue;
+    border: 2px solid white;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
+} 
+#yellow, #yellow1 {
+
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: yellow;
+    border: 2px solid white;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
+}
+#purple, #purple1 {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: purple;
+    border: 2px solid white;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
+
+}
+.invisible {
+    display : none;
+}
+
+.button {
+    margin: 15px 0px 15px 15px;
+    border: 0.5px solid black;
+    z-index: 99;
+    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    background-color: #fff;
+    opacity: 0.8;
+    padding: 0;
+}
+
+.container {
+    margin: 0;
+    background: #ddd;
+    width: 100%;
+    height: 100%;
+}
+.navbar {
+    margin-bottom: 0;
+
+}
+
+
+.button_span {
+    display: inline;
+    background-color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+    padding: 8px 10px;
+    z-index: 1;
+    font-size: 15px;
+    margin-left: 20px;
+}
+
+#width {
+    position: absolute;
+    display: inline;
+    margin: 45px 0 0 20px;
+    padding: 0;
+}
+#eraser {
+    position: absolute;
+    display: inline;
+    margin: 45px 0 0 20px;
+    padding: 0;
+}
+
+input[type="range"] {
+  -webkit-appearance:none;
+  width:100px;
+  height:4px;
+  background: aqua;
+  background-position:center;
+  background-repeat:no-repeat;
+  float: left;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  margin: 0px;
+  border: none;
+}
+input[type="range"]::-webkit-slider-thumb{
+  -webkit-appearance:none;
+  width:20px;
+  height:20px;
+  border-radius: 100%;
+  background: #ddd;
+  position:relative;
+  border: 3px solid aquamarine;
+  z-index:3;
+  cursor: pointer;
+}
+
+/*-------------------
+    SHAPE
+---------------------*/
+
+#ShapeSelect {
+    height: 110px;
+    width: 120px;
+    background: #fff;
+    position: absolute;
+    display: inline;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+    margin: 20px;
+    padding: 5px 10px;
+}
+.shapes {
+    height: 40px;
+    width: 40px;
+    margin-left: 5px;
+    margin-right: 5px;
+    float: left;
+    border: none;
+    background: white;
+    margin-top: 5px;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+}
+.shapes img {
+    width: 100%;
+    height: 100%;
+}
+
+/*---------------------
+    CANVAS
+---------------------*/
+
+canvas {
+    background: #fff;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+
+/*    margin-top: 50px;
+    margin-right: 50px;
+    margin-left: 0;
+    z-index: 99;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;*/
+}
+
+
+/*
+------------------------
+Recommendation Bar 
+-------------------------
+*/
+
+#recommendation {
+    width: 100px !important; 
+    height: 10px !important;
+    overflow-x: auto;
+/*    white-space: nowrap;*/
+}
+
+.recommendations {
+    height: 10px !important;
+    width: 10px !important;
+}
